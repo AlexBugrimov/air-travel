@@ -2,11 +2,13 @@ package dev.bug.common.messages;
 
 import dev.bug.common.Source;
 import dev.bug.common.Type;
+import lombok.NoArgsConstructor;
 
-public abstract class Message {
+@NoArgsConstructor
+public class Message {
 
-    private final Type type;
-    private final Source source;
+    private Type type;
+    private Source source;
 
     public Message(Type type, Source source) {
         this.type = type;
