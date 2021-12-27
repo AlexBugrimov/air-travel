@@ -1,26 +1,18 @@
 package dev.bug.common.messages;
 
 import dev.bug.common.AirPort;
-import dev.bug.common.Source;
-import dev.bug.common.Type;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
-@Builder
+import static dev.bug.common.Source.AIRPORT;
+import static dev.bug.common.Type.STATE;
+
+@Getter
 public class AirPortStateMessage extends Message {
 
-    private AirPort airPort;
-
-    public AirPortStateMessage() {
-        this.source = Source.AIRPORT;
-        this.type = Type.STATE;
-    }
+    private final AirPort airPort;
 
     public AirPortStateMessage(AirPort airPort) {
-        this();
+        super(STATE, AIRPORT);
         this.airPort = airPort;
     }
 }

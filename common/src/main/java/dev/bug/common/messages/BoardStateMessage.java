@@ -1,26 +1,18 @@
 package dev.bug.common.messages;
 
 import dev.bug.common.Board;
-import dev.bug.common.Source;
-import dev.bug.common.Type;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.Getter;
 
-@EqualsAndHashCode(callSuper = true)
-@Data
-@Builder
+import static dev.bug.common.Source.BOARD;
+import static dev.bug.common.Type.STATE;
+
+@Getter
 public class BoardStateMessage extends Message {
 
-    private Board board;
-
-    public BoardStateMessage() {
-        this.source = Source.BOARD;
-        this.type = Type.STATE;
-    }
+    private final Board board;
 
     public BoardStateMessage(Board board) {
-        super();
+        super(STATE, BOARD);
         this.board = board;
     }
 }
