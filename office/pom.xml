@@ -55,6 +55,11 @@
             <artifactId>caffeine</artifactId>
             <version>3.0.5</version>
         </dependency>
+        <dependency>
+            <groupId>dev.bug</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
